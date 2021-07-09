@@ -7,8 +7,6 @@
       "id": "1",
       "name": "Create Dataset",
       "description": "Creates a dataset with the specified number of Rows and 9 pre-defined columns",
-      "details": "",
-      "examples": "",
       "type": "dataset",
       "nodeClass": "fire.nodes.dataset.NodeDatasetCreate",
       "x": "491px",
