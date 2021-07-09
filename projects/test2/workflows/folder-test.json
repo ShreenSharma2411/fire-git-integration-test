@@ -1,0 +1,9 @@
+{
+  "name": "folder-test",
+  "uuid": "5c525f1e-2326-4643-93d8-dda3da7cf7f8",
+  "category": "-",
+  "nodes": [],
+  "edges": [],
+  "dataSetDetails": [],
+  "engine": "scala"
+}
