@@ -1,6 +1,6 @@
 {
   "name": "Read CSV",
-  "uuid": "6b8f8c2d-884f-4db8-9d90-8c58ae437713",
+  "uuid": "7008a23a-454d-4e8a-8f88-832171974c5e",
   "category": "-",
   "nodes": [
     {
@@ -129,13 +129,12 @@
     },
     {
       "id": "2",
-      "name": "Read CSV",
-      "description": "It reads in CSV files and creates a DataFrame from it",
-      "type": "dataset",
-      "nodeClass": "fire.nodes.dataset.NodeDatasetCSV",
-      "x": "471.492px",
-      "y": "431.492px",
-      "hint": "Whenever the file is changed, Refresh the Schema",
+      "name": "Print N Rows",
+      "description": "Prints the specified number of records in the DataFrame. It is useful for seeing intermediate output",
+      "type": "transform",
+      "nodeClass": "fire.nodes.util.NodePrintFirstNRows",
+      "x": "664.484px",
+      "y": "301.488px",
       "fields": [
         {
           "name": "storageLevel",
@@ -164,85 +163,36 @@
           "disableRefresh": false
         },
         {
-          "name": "path",
-          "value": "dbfs:/cars.csv",
+          "name": "title",
+          "value": "Row Values",
           "widget": "textfield",
-          "title": "Path",
-          "description": "Path of the Text file/directory",
+          "title": "Title",
           "required": false,
           "display": true,
           "editable": true,
           "disableRefresh": false
         },
         {
-          "name": "separator",
-          "value": ",",
+          "name": "n",
+          "value": "10",
           "widget": "textfield",
-          "title": "Separator",
-          "description": "CSV Separator",
+          "title": "Num Rows to Print",
+          "description": "number of rows to be printed",
           "required": false,
           "display": true,
           "editable": true,
           "disableRefresh": false
         },
         {
-          "name": "header",
-          "value": "false",
+          "name": "displayDataType",
+          "value": "true",
           "widget": "array",
-          "title": "Header",
-          "description": "Does the file have a header row",
+          "title": "Display Data Type",
+          "description": "If true display rows DataType",
           "optionsArray": [
             "true",
             "false"
           ],
-          "required": false,
-          "display": true,
-          "editable": true,
-          "disableRefresh": false
-        },
-        {
-          "name": "dropMalformed",
-          "value": "false",
-          "widget": "array",
-          "title": "Drop Malformed",
-          "description": "Whether to drop Malformed records or error",
-          "optionsArray": [
-            "true",
-            "false"
-          ],
-          "required": false,
-          "display": true,
-          "editable": true,
-          "disableRefresh": false
-        },
-        {
-          "name": "outputColNames",
-          "value": "[\"C0\",\"C1\",\"C2\",\"C3\"]",
-          "widget": "schema_col_names",
-          "title": "Column Names for the CSV",
-          "description": "New Output Columns of the SQL",
-          "required": false,
-          "display": true,
-          "editable": true,
-          "disableRefresh": false
-        },
-        {
-          "name": "outputColTypes",
-          "value": "[\"INTEGER\",\"INTEGER\",\"INTEGER\",\"INTEGER\"]",
-          "widget": "schema_col_types",
-          "title": "Column Types for the CSV",
-          "description": "Data Type of the Output Columns",
-          "required": false,
-          "display": true,
-          "editable": true,
-          "disableRefresh": false
-        },
-        {
-          "name": "outputColFormats",
-          "value": "[\"\",\"\",\"\",\"\"]",
-          "widget": "schema_col_formats",
-          "title": "Column Formats for the CSV",
-          "description": "Format of the Output Columns",
           "required": false,
           "display": true,
           "editable": true,
@@ -252,7 +202,13 @@
       "engine": "all"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "source": "1",
+      "target": "2",
+      "id": 1
+    }
+  ],
   "dataSetDetails": [],
   "engine": "scala"
 }
